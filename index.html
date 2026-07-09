@@ -1,27 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jogo do Gato Siamês: Verdade ou Mentira?</title>
+    <style>
+        /* --- ESTILIZAÇÃO CSS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f0ebd8; color: #1d2d44; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        header { text-align: center; margin-bottom: 30px; }
+        header h1 { color: #3e5c76; margin-bottom: 10px; }
+        header p { font-style: italic; color: #748cab; }
+        
+        .conteudo-principal { display: flex; flex-direction: column; align-items: center; gap: 30px; max-width: 900px; width: 100%; }
+        .foto-gato { width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); border: 4px solid #fff; }
+        
+        .container-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+        
+        /* Efeito 3D */
+        .flashcard { background-color: transparent; height: 220px; perspective: 1000px; cursor: pointer; }
+        .flashcard-interno { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 12px; }
+        .flashcard:hover .flashcard-interno { transform: rotateY(180deg); }
+        
+        .face { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; border-radius: 12px; }
+        .frente { background-color: #ffffff; color: #1d2d44; border: 3px solid #3e5c76; }
+        .frente h2 { font-size: 1.2rem; line-height: 1.4; }
+        
+        .verso { color: white; transform: rotateY(180deg); }
+        .verso.verdade { background-color: #2a9d8f; /* Verde para verdade */ }
+        .verso.mentira { background-color: #e63946; /* Vermelho para mentira */ }
+        .verso h3 { font-size: 1.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .verso p { font-size: 0.95rem; line-height: 1.4; }
+    </style>
 </head>
 <body>
-     </header>
-          <h1>Descubra Ai</h1>
-          <nav> 
-            <a href-"#">Inicio</a>
-          </nav>
-     </header>
-     <main>
-      <h2>Descubra a verdade passando o mouse</h2>
-      <article>
-          <div> 
-              <div>
-                  <img src="https://www.petz.com.br/blog/wp-content/uploads/2022/10/gato-siames-muda-de-cor.jpg "
-              </div>
-          </div>
-      </article>
-     </main>
-     <footer></footer>
+    <header>
+        <h1> Desafio do <a href="https://wikipedia.org" target="_blank">Gato Siames</a></h1>
+        <p>Passe o mouse ou toque nos cards para revelar o misterio!</p>
+    </header>
+    <div class="conteudo-principal">
+        <!-- Foto de um Gato Siames legitimo usando uma URL publica confiavel -->
+        <img class="foto-gato" src="https://wikimedia.org" alt="Gato Siames com olhos azuis">
+        
+        <div class="container-cards">
+            <!-- CARD 1 (A VERDADE) -->
+            <div class="flashcard">
+                <div class="flashcard-interno">
+                    <div class="face frente">
+                        <h2>Fato A:<br>"Os siameses nascem totalmente brancos e mudam de cor conforme a temperatura ambiente."</h2>
+                    </div>
+                    <div class="face verso verdade">
+                        <h3>VERDADEIRO!</h3>
+                        <p>Eles tem uma mutacao genetica termica. O pelo escurece apenas nas extremidades mais frias do corpo (orelhas, patas e cauda).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2 (A MENTIRA) -->
+            <div class="flashcard">
+                <div class="flashcard-interno">
+                    <div class="face frente">
+                        <h2>Fato B:<br>"Por serem muito independentes e silenciosos, eles odeiam miar e preferem ficar sozinhos."</h2>
+                    </div>
+                    <div class="face verso mentira">
+                        <h3>MENTIRA!</h3>
+                        <p>Os siameses sao famosos por serem extremamente falantes, miam muito alto para "conversar" e detestam a solidão!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
