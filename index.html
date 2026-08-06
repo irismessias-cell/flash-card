@@ -3,45 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo do Gato Siames: Verdade ou Mentira?</title>
-    <style>     
-    </style>
+    <title>Flashcard Alura - Gatos Siameses</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1> Desafio do <a href="https://share.google/zH5WBAqAWe4ngxStA" target="_blank">Gato Siames</a></h1>
-        <p>Passe o mouse ou toque nos cards para revelar o misterio!</p>
-    </header>
-    <div class="conteudo-principal">
-        <img class="foto-gato" src="https://share.google/zH5WBAqAWe4ngxStA" alt="Gato Siames com olhos azuis">
-        
-        <div class="container-cards">
-            <div class="flashcard">
-                <div class="flashcard-interno">
-                    <div class="face frente">
-                        <h2>Fato A:<br>"Os siameses nascem totalmente brancos e mudam de cor conforme a temperatura ambiente."</h2>
-                    </div>
-                    <div class="face verso verdade">
-                        <h3>VERDADEIRO!</h3>
-                        <p>Eles tem uma mutacao genetica termica. O pelo escurece apenas nas extremidades mais frias do corpo (orelhas, patas e cauda).</p>
-                    </div>
+    <main class="container">
+        <!-- Bloco do Cartao -->
+        <article class="cartao" id="cartao-siames">
+            <div class="cartao__conteudo">
+                
+                <!-- Face da Frente -->
+                <div class="cartao__face cartao__face--frente">
+                    <span class="cartao__tag">VERDADE OU MENTIRA?</span>
+                    <h2 class="cartao__pergunta">Gatos siameses sempre nascem totalmente brancos.</h2>
+                    <p class="cartao__dica">Clique no cartao para ver a resposta</p>
                 </div>
+                
+                <!-- Face de Tras -->
+                <div class="cartao__face cartao__face--tras">
+                    <span class="cartao__tag cartao__tag--resposta">RESPOSTA</span>
+                    <h2 class="cartao__resultado">E VERDADE!</h2>
+                    <p class="cartao__explicacao">
+                        Os filhotes nascem brancos devido ao calor do utero materno. As manchas escuras surgem nas partes mais frias do corpo (patas, orelhas e focinho) conforme eles crescem.
+                    </p>
+                </div>
+
             </div>
-            <div class="flashcard">
-                <div class="flashcard-interno">
-                    <div class="face frente">
-                        <h2>Fato B:<br>"Por serem muito independentes e silenciosos, eles odeiam miar e preferem ficar sozinhos."</h2>
-                    </div>
-                    <div class="face verso mentira">
-                        <h3>MENTIRA!</h3>
-                        <p>Os siameses sao famosos por serem extremamente falantes, miam muito alto para "conversar" e detestam a solidão!</p>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <main>
-            </main><footer>
-                <P> Projeto feito por Iris</P>
-            </footer>
-        </body>
+        </article>
+    </main>
+
+    <script src="app.js"></script>
+</body>
 </html>
+
